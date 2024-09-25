@@ -1,7 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
-import mongoose from 'mongoose';
+import { connectDB } from './DB/index.js';
 
 
 const app = express();
@@ -12,12 +12,7 @@ dotenv.config({
 app.use(express.json())
 app.use(cors());
 
-const url = process.env.DBURL
-
-mongoose.connect(url).then(() => {
-    console.log(`Connection Succssfully`);
-}).catch(() => console.log(`Not Connected`))
-
+connectDB()
 
 app.get('/',(req, res)=>{
     res.send("Hello everyone")
