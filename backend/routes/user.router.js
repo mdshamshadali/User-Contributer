@@ -3,7 +3,6 @@ import { userRegister } from '../controller/user.controller.js';
 
 const router = Router();
 
-router.post('/sign', userRegister)
-router.post('/sign', userRegister)
+router.route("/sign").post(userRegister)
 
 export {router};
