@@ -5,4 +5,4 @@ const router = Router();
 
 router.route("/sign").post(userRegister)
 
-export {router};
+export default router;
